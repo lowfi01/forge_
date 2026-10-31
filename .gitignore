@@ -1,0 +1,10 @@
+__pycache__/
+*.pyc
+.venv/
+.DS_Store
+output/
+.env
+.env.*
+# Local upstream/research downloads
+/upstream-references/
+/openSrc/

@@ -1,0 +1,52 @@
+# C# / .NET: contracts to preserve
+
+## Resolve the target
+
+Inspect global.json, target frameworks, language version, nullable context and package locks. Preserve the configured SDK, analyzers and dependency injection lifetimes.
+
+## Apply at the affected boundary
+
+- Nullable annotations help static reasoning; still validate external/deserialized values. Records and readonly references do not recursively freeze mutable objects.
+- Return and await Task/ValueTask work; reserve async void for interfaces that require it, such as event handlers with explicit error handling. Propagate the matching CancellationToken.
+- Keep IDisposable/IAsyncDisposable alive until dependent asynchronous work finishes. Use using/await using according to the implemented disposal interface.
+- Do not share scoped mutable services such as a DbContext across concurrent operations. Inspect deferred IEnumerable execution, repeated enumeration and database query shape before optimizing.
+
+## Worked failure and correction
+
+Keep the resource alive through the asynchronous read:
+
+```csharp
+async Task<string> ReadAsync(string path, CancellationToken token)
+{
+    using var reader = File.OpenText(path);
+    return await reader.ReadToEndAsync(token);
+}
+```
+
+This example requires a target supporting that overload. Returning the unfinished
+task from inside using can dispose reader too early.
+
+## Evidence to report
+
+Use the configured dotnet build/analyzers and scoped authorized tests on supported targets. A cancellation request is cooperative; it does not establish that remote effects were undone.
+
+## Maintainability and checks
+
+Match DI lifetime to owned state: a singleton must not capture request-scoped
+mutable work. Distinguish container-owned from explicitly constructed disposal.
+Consume a returned ValueTask once under its contract: await it, or convert once
+with AsTask and use that Task thereafter. Do not await/copy-consume the original
+again or convert repeatedly; a pooled source may be reused. An ordinary Task can
+support repeated/concurrent awaits. Check target APIs before choosing ValueTask.
+
+## Primary references
+
+Reviewed 24 October 2026. These independently written instructions and synthetic
+examples are usable offline. The links identify semantics and update evidence;
+verify compatibility with the project's target before using newer APIs.
+
+[C# disposal statements](https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/statements/using), [Disposal with unawaited work](https://learn.microsoft.com/en-us/dotnet/fundamentals/code-analysis/quality-rules/ca2025), [.NET cancellation](https://learn.microsoft.com/en-us/dotnet/standard/parallel-programming/task-cancellation).
+
+[.NET dependency injection lifetimes and disposal](https://learn.microsoft.com/en-us/dotnet/core/extensions/dependency-injection/guidelines).
+
+Focused semantics reviewed 30 October 2026: [Microsoft ValueTask consumption](https://devblogs.microsoft.com/dotnet/understanding-the-whys-whats-and-whens-of-valuetask/).

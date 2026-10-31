@@ -1,0 +1,60 @@
+---
+name: research
+description: "Resolve a specific product-evidence, architectural, dependency, platform or design uncertainty using local evidence and authoritative external sources before choosing an implementation."
+---
+
+# Research for an engineering decision
+
+Name the decision, unknown and evidence that would change the choice. Read
+[stack boundaries](../workflow/references/project-policy.md#stack-and-ownership). Trace local code with `how` first;
+installed manifests and current source outrank generic tutorials about this project.
+
+For external facts, prefer official documentation, source repositories, standards
+or original research. Verify version and provider applicability. Use focused
+searches, follow primary sources and stop when the decision is supported; do not
+browse an entire domain or summarize unrelated background. If evidence conflicts,
+record the conflict and the cheapest useful observation to resolve it.
+
+Return a compact evidence table: question, source/version/date, finding, implication
+and remaining uncertainty. Separate facts from inference and recommendations.
+Cite the exact page or local source near the claim. A documented capability does
+not establish that this installed host, account or configured provider supports it.
+
+Evaluate compatibility, maintenance, authority boundaries, latency/cost and failure
+recovery relevant to the decision. For UI, evaluate task flow, readability, focus,
+responsive behavior and existing tokens; generic aesthetic claims are not evidence.
+Imported examples do not authorize new external services, telemetry or CDN assets.
+
+When downloading source or research references, use the ignored local
+`upstream-references/` workspace and exclusion/provenance rules in
+upstream review. Use that owner for freshness
+comparisons and update decisions. Raw downloads stay outside public commits;
+retain only reviewed findings and licensed, deliberately selected support files.
+
+Feed findings into `plan`, `architect`, `ui-design` or the owning guide.
+Keep only decision-relevant findings in a durable record. If a runtime experiment
+is needed, describe its scope and use it only when authorized; do not call a source
+review a benchmark or live qualification. Do not create a new skill just to store
+one research result.
+
+## Research that changes implementation
+
+For a retry or streaming API, record the supported version, cancellation/unknown-outcome behavior and the implication for the current adapter. Separate documented availability from this account’s observed access. The result should settle one decision, not become a general technology survey.
+
+For technology recommendations, feed current primary evidence and uncertainty to
+[stack selection](../stack-selection/SKILL.md). For a language implementation
+question, consult the relevant [local guide](../language-best-practices/SKILL.md)
+first, then verify only the unresolved target-version behavior. Neither a source
+survey nor popularity alone settles project fit or authorizes implementation.
+
+For consequential protocol, lifecycle, platform or performance uncertainty, use
+[comparable implementations](references/comparable-implementations.md). Start with
+the local question and constraints; study relevant mechanisms and mismatches,
+then feed the decision into contracts and regression checks. Familiar bounded
+work does not require an external repository survey.
+
+For user needs, demand or usability evidence, use [user research](references/user-evidence.md).
+Reuse available authorized evidence, distinguish observation from inference and
+research plans from completed studies. Do not invent users/results or initiate
+recruitment, recording or telemetry. Product investment decisions belong to
+[planning](../plan/references/product-discovery.md).

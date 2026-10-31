@@ -1,0 +1,17 @@
+{
+  "schema_version": 2,
+  "defaults": { "claude": "builder", "codex": "builder" },
+  "agents": {
+    "planner": {
+      "purpose": "Planning, design decisions, hard or ambiguous diagnosis, adversarial review",
+      "claude": { "model": "opus", "effort": "medium" },
+      "codex": { "model": "gpt-6.1-sol", "effort": "medium" }
+    },
+    "builder": {
+      "purpose": "Bounded implementation from a plan, small edits, lookups, docs, checks",
+      "claude": { "model": "sonnet", "effort": "medium" },
+      "codex": { "model": "gpt-6-luna", "effort": "high" }
+    }
+  },
+  "human_only": { "claude": { "model": "fable" }, "codex": { "model": "gpt-6-astra" } }
+}

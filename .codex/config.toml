@@ -1,0 +1,20 @@
+# Project defaults; parent permissions, providers and MCP settings apply.
+model = "gpt-6-luna"
+model_reasoning_effort = "high"
+# Standard processing only.
+service_tier = "default"
+
+[features]
+fast_mode = false
+ultrafast_mode = false
+
+[agents]
+max_threads = 2
+
+[agents.planner]
+description = "Planning, design, hard diagnosis and adversarial review"
+config_file = "agents/planner.toml"
+
+[agents.builder]
+description = "Bounded implementation from a plan, small edits, docs and checks"
+config_file = "agents/builder.toml"

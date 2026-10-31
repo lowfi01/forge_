@@ -1,0 +1,201 @@
+# How the skills work together
+
+One owning workflow selects a small set of skills for the requested outcome.
+For substantial work, its lead delegates investigation and implementation, then
+reviews the actual artifacts and verifies the integrated outcome under
+[coordination](coordination.md) and [delivery](delivery.md). Skill selection does
+not itself create new project chats. Skills exchange concrete artifacts: source findings, a decision, an implementation
+plan, changed files or a verification record. They do not recursively invoke each
+other or load the whole catalog. [Roles](roles.md) define responsibility;
+[stack](stack.md) defines the technology boundary. [Model policy](model-policy.md)
+routes complex work to the standard tier and bounded work to the light tier in
+[models.json](models.json), and reserves its human-only tier for explicit selection.
+An optional Codex-only middle tier requires explicit human selection for the
+assignment; it does not change the light/standard defaults or Claude routing.
+
+| Task or unknown                     | Primary skill                              | Useful input / handoff                                                                              |
+| ----------------------------------- | ------------------------------------------ | --------------------------------------------------------------------------------------------------- |
+| Clear bounded implementation        | `workflow`                           | Small clear edit → direct change; substantial work → delegate → lead review and authorized evidence |
+| Prompt refinement or requested plan | `plan`                               | Outcome + stack + findings → ordered executable plan                                                |
+| Demonstrated reusable skill gap | `reflect` → `orbyn-skill-creator` | Concrete general proposal → optional scoped user consent → checked contribution; company-only lessons stay local |
+| Remember, search, tag, categorize, correct or forget | `reflect` | Explicit local memory request → private scoped CRUD, revision receipt and honest deletion coverage |
+| Unknown current behavior            | `how`                                      | Owning files → mechanism and evidence                                                               |
+| Historical reason                   | `why`                                      | Relevant Git/source history → constraints, with uncertainty                                         |
+| External/version uncertainty        | `research`                           | Specific question → cited finding for the planner/designer                                          |
+| Upstream code/skill freshness       | `orbyn-upstream-review`                    | Pinned source + local owner → reviewed differences, dispositions and scoped update                  |
+| Interface/ownership/module layout   | `architect`                                | Grounded requirements → contracts, lifecycle and allowed module dependencies                        |
+| API/service effects                 | `backend-design`                     | Caller contract + authority → transactional effect and client errors                                |
+| Stored-data/schema transition       | `data-migration`                     | Reader/writer inventory → compatible cutover and recovery                                           |
+| CI and contribution automation      | `ci-design`                          | Event/trust model → scoped checks and reviewable promotion                                          |
+| Bulk CI failures or release evidence | `ci-design` → `how` / `tdd` → `workflow` | Complete indexed matrix → supported causes/regressions → current artifact/stage gate |
+| Consequential competing designs     | `arena`                                    | Shared criteria → bounded alternatives and one decision                                             |
+| Large execution                     | `figure-it-out`                            | Agreed plan → completed units and concise handoffs                                                  |
+| UI flow/layout                      | `ui-design` + `orbyn-content-design` | User task + actual tokens → coherent UI/copy                                                        |
+| Social posts and carousel copy      | `social-content`                           | Supplied facts + author voice → copy, claim notes and optional visual brief                         |
+| Social graphics and feed previews   | `social-preview`                           | Chosen copy + assets → editable visual source, rendered review and requested exports                |
+| Implementation in another language  | `language-best-practices`                  | Actual files/manifests → one local language guide, preserved lifecycle and boundary contracts       |
+| Language/framework/storage choice   | `stack-selection`                    | Constraints + baseline + primary evidence → recommendation, operating cost and exit/revisit trigger |
+| TypeScript contract                 | `language-best-practices`                  | Existing schema/callers → precise valid states                                                      |
+| Implementation tests / TDD                 | `tdd`                                      | Failure contract + allowed environment → focused regression and fix                                 |
+| Existing security findings          | `orbyn-security-remediation`               | Saved findings + current source → scoped fixes and authorized evidence; no new scan                 |
+| Concrete adversarial review         | `interrogate`                              | Candidate + intended behavior → actionable findings                                                 |
+| Artifact/runtime investigation      | `reverse-engineer-anything`                | Target + authority + local tools or available REA engine → traceable evidence                                              |
+| Skill creation/refinement           | `orbyn-skill-creator`                      | Routing gap → integrated skill, links and docs                                                      |
+| Host configuration                  | `orbyn-setup`                              | Supported host + user preferences → scoped configuration                                            |
+| Lessons/preferences                 | `reflect` / `automate-me`                  | Current-task evidence + authorization → owning instruction change                                   |
+| Prose / durable evidence            | `unslop` / `show-me-your-work`             | Supported facts → concise result or decision record                                                 |
+
+Select an owning skill and its conditional method when the decision needs it: ownership and boundaries,
+root cause, idempotency, shared-state isolation, simpler design, compatibility,
+context cost and evidence. The 20 former principle entrypoints are references, not discoverable skills.
+They refine the task; they are not separate obligatory
+phases or approval gates. REA maintenance skills apply only when that tooling is
+the requested target. Their local methods and examples work without fetching
+upstream instructions; REA evidence/recovery
+owns shared evidence and failure interpretation. The local-tool path
+feeds identified observations into compatible deeper analysis without fabricating engine records. Runtime, source/history inputs
+and provider availability remain separate requirements.
+
+## this library identity
+
+Use the [fullstack contract](../../skills/workflow/references/fullstack-contract.md)
+to connect domain, transport, persistence, clients and operations. Resolve the
+consuming project’s actual stack before applying examples. The skills preserve
+source attribution and provide concrete decision examples rather than claiming
+all methods originated here. Backend, stored-data and CI skills own separate
+boundaries; they do not duplicate the architect or launch extra workflow stages.
+
+## Keep the system coherent
+
+Workspace selection and instruction/code lookup share the setup owner's
+action scope method.
+`how` narrows and deliberately widens implementation search within that selected
+checkout; `reflect` selects authorized memory scope and applicability before
+retrieval. Worktree selection triggers relevant re-resolution, not another skill
+installation or full-catalog reload. File reads, observed request inclusion and
+execution enforcement remain distinct evidence levels. The
+research proposal leaves
+runtime coverage machinery and model experiments unimplemented.
+
+Upstream contribution requests enter the workflow's
+[intake](../../skills/workflow/playbooks/contribution-intake.md), use
+`how`'s [reproduction contract](../../skills/how/references/reproduction.md) for
+defects, and continue through
+[bounded PR iteration](../../skills/workflow/playbooks/pr-iteration.md)
+when review/CI work is requested. Target instructions and existing skills stay
+authoritative. These are internal handoffs, not extra invocations for the human.
+The new support documents ship in the managed skills-only distribution.
+
+Social writing and visuals share a brief, not a recursive workflow: `social-content`
+owns the message and evidence; `social-preview` owns composition and rendering.
+`unslop` supplies prose refinement. In-app language and product layout stay with
+the product design skills. A text-only post needs no renderer, and a supplied
+caption needs no rewrite merely to preview it. PDF, presentation and image tools
+are optional output paths selected from capabilities actually available in the
+host. See the [source/design record](../../tools/research/social-content.md).
+
+`skills/catalog.json` inventories canonical skills and routing relationships.
+`sync-agent-skills.py` maintains the index and both host discovery links. The
+library checker validates links, provenance, manifest hashes and host defaults.
+Use [documentation policy](documentation.md) to keep product contracts separate
+from workflows. The creator changes the owning rule once and migrates callers;
+it must not add another competing policy document for the same concern.
+
+## Static routing examples
+
+First identify the requested result and allowed effects, then choose one owner
+from the table above. Load its body and only the references needed for the next
+decision. Add another skill when a real contract crosses its boundary; do not
+load a chain merely because the catalog lists related skills. An explicit
+prompt rewrite ends with a usable brief; a clear implementation request proceeds
+without a prompt-rewriting detour. A missing tool changes the evidence claim,
+not the task's authority or another owner's instructions. For continuation, follow
+the [task-record defaults](../../skills/workflow/references/task-record.md)
+and select structured validation only when useful. Routine edits need no extra
+log or tracker.
+
+- “Plan a shared schema migration”: planner reads stack and current callers, uses
+  architecture for the contract and produces a plan; plan-only does not edit code.
+- “Fix a typo”: current session makes the small edit; no research or agent panel.
+- “Redesign Docs on mobile”: UI/copy skills inspect actual components and pane
+  width; research only unresolved facts; no new framework implied.
+- “What changed in a provider API?”: researcher checks current primary docs and
+  gives evidence to the owning implementation or plan.
+- “Add a reusable skill”: creator checks overlap, catalog, both hosts and docs;
+  it does not register MCP or change global settings.
+
+- “Implement a substantial feature”: lead grounds the affected contracts, selects
+  architecture where needed, delegates owned implementation, reviews the diff,
+  verifies authorized behavior, and routes findings back before delivery.
+- “Use a child to implement this migration”: that child completes its owned slice;
+  it does not recursively spawn engineers. The parent supplies review separation.
+- “Use a named delegate” when it is unavailable: state the capability failure and
+  permitted direct fallback; do not substitute a generic inherited model.
+
+- “Write a LinkedIn update from these feature notes”: social writing produces
+  a supported draft; it does not infer release status from implementation alone.
+- “Preview this exact caption with a two-card carousel”: social preview preserves
+  the caption and renders the cards at wide/narrow sizes; it does not publish.
+- “Shorten this Settings label”: product content design owns the edit, not social writing.
+- “Export this carousel” without an available exporter: deliver editable source
+  and identify the missing export step; HTML generation is not PDF/PNG evidence.
+
+These examples are routing expectations, not claims of executed model trials.
+
+## Consumer-owned skills and offline resources
+
+Stateful prototypes connect `ui-design` previews to `architect` state/rule
+models and `tdd` property checks or verification drift. Use the
+[statechart method](../../skills/architect/references/statecharts.md) and
+[behavior preview](../../skills/ui-design/references/behavior-preview.md).
+Rendering, exercised interaction, model results and real-code correspondence are
+separate evidence. Select rigor from the risk; simple visual work needs no checker.
+Durable project verification instructions follow the target's existing owner and
+stay outside the shared 34-skill catalog.
+
+Before skill authoring or setup, classify shared library versus company/repo
+ownership with the local skill guide.
+Company-specific skills stay in the consuming checkout's established paths under
+its own discovery rules, outside the shared catalog/export. Setup does not move,
+namespace, register or synchronize them; separately authorized authoring follows
+that project's conventions.
+Read relevant local skills with the portable method; preserve user/project policy.
+Use the offline contract for
+local-first instructions, licensed snapshots and honest freshness limits.
+
+Explicit local/offline source security audit → `orbyn-security-audit`; existing
+findings → remediation. Installing or adapting either does not start a scan.
+Contract, delivery-slice and behavior-check guidance lives directly in the
+existing architect/planner/diagnosis/TDD/review owners, without extra manual
+invocations. [Workflow coverage](../engineering-workflows.md) records those owners.
+
+Worktree location, branch/path naming, reuse and preservation/cleanup belong to
+orbyn-worktree, selected by the main workflow
+from the task’s isolation needs without a separate human invocation.
+
+## Entrypoints, source data and audit evidence
+
+Only a catalog owner's top-level `SKILL.md` is an active shared entrypoint.
+Pinned upstream entrypoint text is stored as `SOURCE.md` so recursive discovery
+cannot expose foreign aliases or missing upstream skill calls. The original path
+and unchanged hashes remain in each snapshot; required notices remain bundled.
+Use the maintained local method, not an upstream collection's routing.
+
+The current full-catalog audit records decisions and evidence
+limits for every entry. The 34 active owners retain the 20 principle methods
+under their reference directories. Entry-point length alone is not a quality measure: check whether a method
+actually specifies decisions, failure handling, a useful result and verification.
+
+## Engineering scope and human handoff
+
+Use the workflow's [scope guide](../../skills/workflow/references/engineering-scope.md)
+for onboarding, ordinary review and responsibility across junior/senior/staff work.
+The planning owner handles cross-team strategy; architecture handles service
+readiness; CI handles incident coordination and verified recovery. These are
+conditional methods, not additional skills or authority to act as an organization.
+
+A requested UI prototype must have an actual [preview and opening path](../../skills/ui-design/references/prototypes.md),
+with simulated effects and evidence limits explicit. Fullstack implementation
+connects that flow to real domain/API contracts. Use [artifact lifecycle](../../skills/workflow/references/artifact-lifecycle.md)
+for storage, retained human review, dev-resource ownership and cleanup; worktree
+removal still belongs to its existing owner.

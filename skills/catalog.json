@@ -1,0 +1,239 @@
+{
+  "schema_version": 1,
+  "categories": [
+    "Workflow and planning",
+    "Engineering practice",
+    "Fullstack contracts and delivery",
+    "Product design",
+    "Social content and visuals"
+  ],
+  "skills": [
+    {
+      "name": "architect",
+      "category": "Engineering practice",
+      "related": [
+        "how",
+        "why",
+        "plan",
+        "backend-design",
+        "data-migration",
+        "stack-selection",
+        "language-best-practices",
+        "ci-design",
+        "tdd",
+        "ui-design",
+        "ai-application"
+      ]
+    },
+    {
+      "name": "how",
+      "category": "Engineering practice",
+      "related": [
+        "why",
+        "workflow",
+        "tdd",
+        "ci-design"
+      ]
+    },
+    {
+      "name": "interrogate",
+      "category": "Engineering practice",
+      "related": [
+        "how"
+      ]
+    },
+    {
+      "name": "language-best-practices",
+      "category": "Engineering practice",
+      "related": [
+        "how",
+        "architect",
+        "backend-design",
+        "data-migration",
+        "ci-design",
+        "stack-selection"
+      ]
+    },
+    {
+      "name": "ai-application",
+      "category": "Fullstack contracts and delivery",
+      "related": [
+        "plan",
+        "research",
+        "architect",
+        "backend-design",
+        "ui-design",
+        "tdd",
+        "ci-design",
+        "stack-selection"
+      ]
+    },
+    {
+      "name": "backend-design",
+      "category": "Fullstack contracts and delivery",
+      "related": [
+        "architect",
+        "how",
+        "language-best-practices",
+        "data-migration",
+        "ui-design",
+        "ai-application"
+      ]
+    },
+    {
+      "name": "ci-design",
+      "category": "Fullstack contracts and delivery",
+      "related": [
+        "workflow",
+        "how",
+        "tdd",
+        "ai-application"
+      ]
+    },
+    {
+      "name": "data-migration",
+      "category": "Fullstack contracts and delivery",
+      "related": [
+        "architect",
+        "backend-design",
+        "ci-design"
+      ]
+    },
+    {
+      "name": "plan",
+      "category": "Workflow and planning",
+      "related": [
+        "how",
+        "why",
+        "architect",
+        "research",
+        "workflow",
+        "ai-application"
+      ]
+    },
+    {
+      "name": "research",
+      "category": "Workflow and planning",
+      "related": [
+        "how",
+        "plan",
+        "architect",
+        "ui-design",
+        "stack-selection",
+        "ai-application"
+      ]
+    },
+    {
+      "name": "stack-selection",
+      "category": "Engineering practice",
+      "related": [
+        "how",
+        "research",
+        "architect",
+        "plan",
+        "language-best-practices",
+        "ci-design",
+        "ai-application"
+      ]
+    },
+    {
+      "name": "ui-design",
+      "category": "Product design",
+      "related": [
+        "research",
+        "workflow",
+        "architect",
+        "tdd",
+        "ai-application"
+      ]
+    },
+    {
+      "name": "workflow",
+      "category": "Workflow and planning",
+      "related": [
+        "plan",
+        "how",
+        "architect",
+        "ui-design",
+        "backend-design",
+        "data-migration",
+        "ci-design",
+        "language-best-practices",
+        "stack-selection",
+        "tdd",
+        "reflect",
+        "ai-application"
+      ]
+    },
+    {
+      "name": "reflect",
+      "category": "Workflow and planning",
+      "related": [
+        "workflow"
+      ]
+    },
+    {
+      "name": "show-me-your-work",
+      "category": "Workflow and planning",
+      "related": [
+        "plan"
+      ]
+    },
+    {
+      "name": "social-content",
+      "category": "Social content and visuals",
+      "related": [
+        "unslop"
+      ]
+    },
+    {
+      "name": "tdd",
+      "category": "Engineering practice",
+      "related": [
+        "workflow",
+        "how",
+        "ci-design",
+        "architect",
+        "ai-application"
+      ]
+    },
+    {
+      "name": "unslop",
+      "category": "Engineering practice",
+      "related": [
+        "social-content"
+      ]
+    },
+    {
+      "name": "why",
+      "category": "Engineering practice",
+      "related": [
+        "how",
+        "architect"
+      ]
+    }
+  ],
+  "retired_skills": {
+    "typescript-best-practices": "language-best-practices",
+    "principle-boundary-discipline": "backend-design",
+    "principle-build-the-lever": "workflow",
+    "principle-encode-lessons-in-structure": "architect",
+    "principle-exhaust-the-design-space": "architect",
+    "principle-experience-first": "ui-design",
+    "principle-fix-root-causes": "how",
+    "principle-foundational-thinking": "architect",
+    "principle-guard-the-context-window": "how",
+    "principle-laziness-protocol": "architect",
+    "principle-make-operations-idempotent": "backend-design",
+    "principle-migrate-callers-then-delete-legacy-apis": "architect",
+    "principle-minimize-reader-load": "architect",
+    "principle-never-block-on-the-human": "plan",
+    "principle-outcome-oriented-execution": "workflow",
+    "principle-prove-it-works": "workflow",
+    "principle-redesign-from-first-principles": "architect",
+    "principle-separate-before-serializing-shared-state": "workflow",
+    "principle-sequence-verifiable-units": "plan",
+    "principle-subtract-before-you-add": "architect",
+    "principle-type-system-discipline": "language-best-practices"
+  }
+}
