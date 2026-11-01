@@ -1,11 +1,13 @@
-# James's skills
+# Forge
 
-A personal skill library for Claude Code (and Codex): one engineering method shared
+James's personal skill library for Claude Code (and Codex): one engineering method shared
 across work, mobile apps, the trading bot, game dev and writing.
 
 Forked from [Orbyn Fullstack Engineering Skills](https://github.com/kinqsradio/orbyn-fullstack-skills)
 by Anh Dang (MIT), then pruned from 36 to 19 skills, renamed, and set up for
 cheap-by-default models. See [LICENSE](LICENSE) and [AUTHORS.md](AUTHORS.md).
+
+*Herrero* is Spanish for blacksmith; this is where the tools get made.
 
 ## Install
 
@@ -60,7 +62,8 @@ logs and dashboards, and conventions. Project-only skills go in the project's ow
 ## Pull upstream improvements
 
 ```bash
-git remote add upstream https://github.com/kinqsradio/orbyn-fullstack-skills.git
+# upstream is already set in this repo; on a fresh clone add it with:
+# git remote add upstream https://github.com/kinqsradio/orbyn-fullstack-skills.git
 git fetch upstream
 git diff upstream/main -- skills/interrogate   # paths differ for renamed skills
 ```
