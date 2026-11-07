@@ -1,6 +1,6 @@
 # Exhaust the design space
 
-Compare a small number of plausible sketches against user outcomes, complexity and failure behavior. Use a prototype for an empirical uncertainty. Stop when evidence selects an approach; do not enumerate every possible design or run panels for established patterns. See arena.
+Compare a small number of plausible sketches against user outcomes, complexity and failure behavior. Use a prototype for an empirical uncertainty. Stop when evidence selects an approach; do not enumerate every possible design or run panels for established patterns. See the architecture guidance.
 
 ## Decision in practice
 
@@ -15,7 +15,7 @@ Name the uncertainty, two plausible approaches and an observation that selects b
 Concrete check: If polling already meets the documented latency and reconnect contract, a streaming prototype needs a new consequential reason. Do not score an unsupported cost estimate as a fact.
 
 Return the changed invariant, its owning location and the observation or evidence
-gap. Carry execution through arena when relevant. This
+gap. Carry execution through architect when relevant. This
 principle refines that task; it does not create another mandatory phase.
 
 ## Source and license

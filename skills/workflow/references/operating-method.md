@@ -7,7 +7,7 @@ Use this local handoff map when an upstream workflow name is absent:
 | Need                                          | Maintained owner and result                                                             |
 | --------------------------------------------- | --------------------------------------------------------------------------------------- |
 | Reproduction and defect diagnosis             | `how` plus the bug-fix playbook: source trace, supported cause, corrected invariant     |
-| Architecture alternatives                     | `architect`, with `arena` only for a consequential unresolved comparison                |
+| Architecture alternatives                     | `architect`: compare sketches for consequential unresolved choices                |
 | Performance or captured-profile investigation | Performance/trace playbook: workload, limiting phase, comparable observations           |
 | Caller-preserving refactor                    | Refactoring playbook: caller inventory, target boundary, compatibility evidence         |
 | Prototype or evaluation                       | Relevant playbook: frozen question, decision criteria, observations and limits          |

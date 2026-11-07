@@ -23,8 +23,10 @@ for n in names:
     elif len(d.group(1)) > 1024:
         errors.append(f"{n}: description over 1024 characters")
 
-for dp, _, fs in os.walk(ROOT):
-    if "/.git" in dp: continue
+for dp, dirs, fs in os.walk(ROOT):
+    # Generated output and preserved installer backups are not active library sources.
+    if dp == ROOT:
+        dirs[:] = [d for d in dirs if d not in (".git", "output", "upstream-references", "openSrc")]
     for f in fs:
         if not f.endswith(".md"): continue
         path = os.path.join(dp, f)
@@ -48,7 +50,13 @@ for mirror in (".claude/skills", ".agents/skills"):
     for n in set(names) - have: errors.append(f"{mirror}: missing link for {n}")
     for n in have - set(names): errors.append(f"{mirror}: stale link {n}")
     for n in have:
-        if not os.path.exists(os.path.join(md, n)): errors.append(f"{mirror}/{n}: dangling symlink")
+        entry = os.path.join(md, n)
+        if not os.path.islink(entry):
+            errors.append(f"{mirror}/{n}: expected a skill symlink; run install.sh")
+        elif not os.path.exists(entry):
+            errors.append(f"{mirror}/{n}: dangling symlink")
+        elif os.path.realpath(entry) != os.path.realpath(os.path.join(SKILLS, n)):
+            errors.append(f"{mirror}/{n}: link points to the wrong skill")
 
 retired = ["orbyn-setup", "orbyn-worktree", "orbyn-skill-creator", "orbyn-upstream-review",
            "orbyn-content-design", "orbyn-security", "technical-illustration", "social-preview",

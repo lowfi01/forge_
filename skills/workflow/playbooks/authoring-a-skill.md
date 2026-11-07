@@ -1,6 +1,6 @@
 # Authoring a skill
 
-Use orbyn-skill-creator. Check the existing
+Check the existing
 owning skill, stack, catalog, host links and documentation before adding another
 entrypoint. Classify library versus company/repo ownership before editing.
 Follow the consumer boundary for

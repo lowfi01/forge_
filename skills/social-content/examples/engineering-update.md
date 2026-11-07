@@ -33,7 +33,7 @@ saved value. A finished request does not always mean a successful save.
 
 No screenshot, testimonial, engagement result or speedup is invented. This is
 copy and a visual brief; the cards have not been rendered. Hand approved text,
-project brand assets and these limits to social-preview.
+project brand assets and these limits to the available visual tools.
 
 **Failure example.** “We launched a game-changing editor that never loses work.”
 This invents release status and an absolute reliability claim.

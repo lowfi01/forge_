@@ -35,4 +35,9 @@ its references load only when the SKILL.md links to them. Start with [workflow](
 
 ## Social content and visuals
 
-- [social-content](social-content/SKILL.md) — Draft and revise LinkedIn and other social posts, product announcements, threads and carousel copy from supplied evidence in the author's voice. Use social-preview for visual assets and feed mockups.
+- [social-content](social-content/SKILL.md) — Draft and revise LinkedIn and other social posts, product announcements, threads and carousel copy from supplied evidence in the author's voice. Use available visual tools for visual assets and feed mockups.
+
+## Activity and visual explanation
+
+- [worklog](worklog/SKILL.md) — Capture meaningful completed work in private ticket/epic files and a daily log; query status without self-logging.
+- [visuals](visuals/SKILL.md) — Choose and validate diagrams, charts, illustrations and conditional interactive animation/video.

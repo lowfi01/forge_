@@ -75,3 +75,16 @@ requested history with recent memory. Reconcile recalled branch/issue/PR claims
 against actual source, reversions and failed attempts under
 [session pickup](../workflow/playbooks/session-pickup.md). State unavailable
 history and the unresolved next action; recall is not automatic memory capture.
+
+## Turn a demonstrated lesson into a small improvement
+
+State the failed assumption, the observation that disproved it, the correction and where
+it does not apply. Classify a routing gap, missing guidance or failure to follow existing
+guidance before adding rules. Prefer a representation or focused check that prevents the
+failure; otherwise improve the existing owner's instruction. Test the failure and a nearby
+legitimate case. A passing script test does not establish better agent behaviour.
+
+Private activity belongs to [worklog](../worklog/SKILL.md); project continuity and reusable
+memory keep their current stores. Worklog capture does not authorize automatic skill edits
+or creation of another memory database. Offer only a useful supported lesson, not a prompt
+to remember every completed task.

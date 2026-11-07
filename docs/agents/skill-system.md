@@ -10,39 +10,39 @@ other or load the whole catalog. [Roles](roles.md) define responsibility;
 [stack](stack.md) defines the technology boundary. [Model policy](model-policy.md)
 routes complex work to the standard tier and bounded work to the light tier in
 [models.json](models.json), and reserves its human-only tier for explicit selection.
-An optional Codex-only middle tier requires explicit human selection for the
-assignment; it does not change the light/standard defaults or Claude routing.
+Claude is the default host; Codex uses the same skills when requested.
+Use the actual host configuration and model policy; do not switch hosts automatically.
 
 | Task or unknown                     | Primary skill                              | Useful input / handoff                                                                              |
 | ----------------------------------- | ------------------------------------------ | --------------------------------------------------------------------------------------------------- |
 | Clear bounded implementation        | `workflow`                           | Small clear edit → direct change; substantial work → delegate → lead review and authorized evidence |
 | Prompt refinement or requested plan | `plan`                               | Outcome + stack + findings → ordered executable plan                                                |
-| Demonstrated reusable skill gap | `reflect` → `orbyn-skill-creator` | Concrete general proposal → optional scoped user consent → checked contribution; company-only lessons stay local |
+| Demonstrated reusable skill gap | `reflect` → [skill-authoring playbook](../../skills/workflow/playbooks/authoring-a-skill.md) | Concrete general proposal → optional scoped user consent → checked contribution; company-only lessons stay local |
 | Remember, search, tag, categorize, correct or forget | `reflect` | Explicit local memory request → private scoped CRUD, revision receipt and honest deletion coverage |
 | Unknown current behavior            | `how`                                      | Owning files → mechanism and evidence                                                               |
 | Historical reason                   | `why`                                      | Relevant Git/source history → constraints, with uncertainty                                         |
 | External/version uncertainty        | `research`                           | Specific question → cited finding for the planner/designer                                          |
-| Upstream code/skill freshness       | `orbyn-upstream-review`                    | Pinned source + local owner → reviewed differences, dispositions and scoped update                  |
+| Upstream code/skill freshness       | `research` + source comparison                    | Pinned source + local owner → reviewed differences, dispositions and scoped update                  |
 | Interface/ownership/module layout   | `architect`                                | Grounded requirements → contracts, lifecycle and allowed module dependencies                        |
 | API/service effects                 | `backend-design`                     | Caller contract + authority → transactional effect and client errors                                |
 | Stored-data/schema transition       | `data-migration`                     | Reader/writer inventory → compatible cutover and recovery                                           |
 | CI and contribution automation      | `ci-design`                          | Event/trust model → scoped checks and reviewable promotion                                          |
 | Bulk CI failures or release evidence | `ci-design` → `how` / `tdd` → `workflow` | Complete indexed matrix → supported causes/regressions → current artifact/stage gate |
-| Consequential competing designs     | `arena`                                    | Shared criteria → bounded alternatives and one decision                                             |
-| Large execution                     | `figure-it-out`                            | Agreed plan → completed units and concise handoffs                                                  |
-| UI flow/layout                      | `ui-design` + `orbyn-content-design` | User task + actual tokens → coherent UI/copy                                                        |
+| Consequential competing designs     | `architect`                                    | Shared criteria → bounded alternatives and one decision                                             |
+| Large execution                     | `workflow`                            | Agreed plan → completed units and concise handoffs                                                  |
+| UI flow/layout                      | `ui-design` | User task + actual tokens → coherent UI/copy                                                        |
 | Social posts and carousel copy      | `social-content`                           | Supplied facts + author voice → copy, claim notes and optional visual brief                         |
-| Social graphics and feed previews   | `social-preview`                           | Chosen copy + assets → editable visual source, rendered review and requested exports                |
+| Social graphics and feed previews   | available visual tools                           | Chosen copy + assets → editable visual source, rendered review and requested exports                |
 | Implementation in another language  | `language-best-practices`                  | Actual files/manifests → one local language guide, preserved lifecycle and boundary contracts       |
 | Language/framework/storage choice   | `stack-selection`                    | Constraints + baseline + primary evidence → recommendation, operating cost and exit/revisit trigger |
 | TypeScript contract                 | `language-best-practices`                  | Existing schema/callers → precise valid states                                                      |
 | Implementation tests / TDD                 | `tdd`                                      | Failure contract + allowed environment → focused regression and fix                                 |
-| Existing security findings          | `orbyn-security-remediation`               | Saved findings + current source → scoped fixes and authorized evidence; no new scan                 |
+| Existing security findings          | [bug-fix workflow](../../skills/workflow/playbooks/bug-fix.md)               | Saved findings + current source → scoped fixes and authorized evidence; no new scan                 |
 | Concrete adversarial review         | `interrogate`                              | Candidate + intended behavior → actionable findings                                                 |
-| Artifact/runtime investigation      | `reverse-engineer-anything`                | Target + authority + local tools or available REA engine → traceable evidence                                              |
-| Skill creation/refinement           | `orbyn-skill-creator`                      | Routing gap → integrated skill, links and docs                                                      |
-| Host configuration                  | `orbyn-setup`                              | Supported host + user preferences → scoped configuration                                            |
-| Lessons/preferences                 | `reflect` / `automate-me`                  | Current-task evidence + authorization → owning instruction change                                   |
+| Artifact/runtime investigation      | `how`                | Target + authority + available local tools → traceable evidence                                              |
+| Skill creation/refinement           | [skill-authoring playbook](../../skills/workflow/playbooks/authoring-a-skill.md)                      | Routing gap → integrated skill, links and docs                                                      |
+| Host configuration                  | project setup instructions                              | Supported host + user preferences → scoped configuration                                            |
+| Lessons/preferences                 | `reflect`                  | Current-task evidence + authorization → owning instruction change                                   |
 | Prose / durable evidence            | `unslop` / `show-me-your-work`             | Supported facts → concise result or decision record                                                 |
 
 Select an owning skill and its conditional method when the decision needs it: ownership and boundaries,
@@ -87,7 +87,7 @@ authoritative. These are internal handoffs, not extra invocations for the human.
 The new support documents ship in the managed skills-only distribution.
 
 Social writing and visuals share a brief, not a recursive workflow: `social-content`
-owns the message and evidence; `social-preview` owns composition and rendering.
+owns the message and evidence; available visual tools handle composition and rendering.
 `unslop` supplies prose refinement. In-app language and product layout stay with
 the product design skills. A text-only post needs no renderer, and a supplied
 caption needs no rewrite merely to preview it. PDF, presentation and image tools
@@ -95,8 +95,8 @@ are optional output paths selected from capabilities actually available in the
 host. See the [source/design record](../../tools/research/social-content.md).
 
 `skills/catalog.json` inventories canonical skills and routing relationships.
-`sync-agent-skills.py` maintains the index and both host discovery links. The
-library checker validates links, provenance, manifest hashes and host defaults.
+`install.sh` maintains both host discovery mirrors and installs the selected host links.
+`python3 scripts/check.py` validates names, descriptions, links, the catalog and mirrors.
 Use [documentation policy](documentation.md) to keep product contracts separate
 from workflows. The creator changes the owning rule once and migrates callers;
 it must not add another competing policy document for the same concern.
@@ -151,7 +151,7 @@ models and `tdd` property checks or verification drift. Use the
 Rendering, exercised interaction, model results and real-code correspondence are
 separate evidence. Select rigor from the risk; simple visual work needs no checker.
 Durable project verification instructions follow the target's existing owner and
-stay outside the shared 34-skill catalog.
+stay outside the shared 21-skill catalog.
 
 Before skill authoring or setup, classify shared library versus company/repo
 ownership with the local skill guide.
@@ -163,14 +163,14 @@ Read relevant local skills with the portable method; preserve user/project polic
 Use the offline contract for
 local-first instructions, licensed snapshots and honest freshness limits.
 
-Explicit local/offline source security audit → `orbyn-security-audit`; existing
-findings → remediation. Installing or adapting either does not start a scan.
+Explicit local/offline source security audit → `how` + `interrogate`; existing
+findings → the bug-fix workflow. Skill selection does not start a scan.
 Contract, delivery-slice and behavior-check guidance lives directly in the
 existing architect/planner/diagnosis/TDD/review owners, without extra manual
 invocations. [Workflow coverage](../engineering-workflows.md) records those owners.
 
 Worktree location, branch/path naming, reuse and preservation/cleanup belong to
-orbyn-worktree, selected by the main workflow
+Git worktree guidance, selected by the main workflow
 from the task’s isolation needs without a separate human invocation.
 
 ## Entrypoints, source data and audit evidence
@@ -181,8 +181,7 @@ cannot expose foreign aliases or missing upstream skill calls. The original path
 and unchanged hashes remain in each snapshot; required notices remain bundled.
 Use the maintained local method, not an upstream collection's routing.
 
-The current full-catalog audit records decisions and evidence
-limits for every entry. The 34 active owners retain the 20 principle methods
+The maintained skills retain principle methods
 under their reference directories. Entry-point length alone is not a quality measure: check whether a method
 actually specifies decisions, failure handling, a useful result and verification.
 
