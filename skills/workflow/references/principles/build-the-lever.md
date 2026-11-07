@@ -15,7 +15,7 @@ State the repeatable transformation, its explicit input paths and a refusal case
 Concrete check: A rename helper must refuse ambiguous text rather than rewrite every matching substring. Compare the dry-run allowlist with the actual diff.
 
 Return the changed invariant, its owning location and the observation or evidence
-gap. Carry execution through figure-it-out when relevant. This
+gap. Carry execution through workflow when relevant. This
 principle refines that task; it does not create another mandatory phase.
 
 ## Source and license

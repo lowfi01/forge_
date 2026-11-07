@@ -35,7 +35,7 @@ materially affect correctness, cost, compatibility or the requested outcome.
 ## Design and sequence
 
 Use `architect` for interface/ownership choices. Compare alternatives only where
-there is a real trade-off; use `arena` when distinct sketches would settle it.
+there is a real trade-off; compare distinct sketches when they would settle it.
 Use the relevant owner's conditional methods; do not load every method or require model panels.
 
 Split work by coherent outcomes, dependencies and reversible boundaries. Choose
@@ -75,7 +75,7 @@ Update the same plan when evidence changes the design; explain the change. Use
 the [checkable handoff](../workflow/references/handoffs.md) when structured
 validation helps a transfer or resumed task, preserving candidate and scope.
 Do not expand a prompt rewrite into a mandatory packet or implementation phase.
-Use `figure-it-out` to execute a large plan and `show-me-your-work` for consequential
+Use `workflow` to execute a large plan and `show-me-your-work` for consequential
 decisions. Session creation follows [coordination](../workflow/references/project-policy.md#delegation-and-host-configuration).
 Do not invent extra stages, stacked PRs, sessions or recurring monitors.
 
@@ -107,3 +107,11 @@ For uncertain product opportunities or post-delivery outcome decisions, use
 [product discovery](references/product-discovery.md): evidence versus assumptions,
 manual/no-build alternatives, smallest useful experiment and outcome measures.
 This is conditional; a known bounded fix needs no discovery program.
+
+## One design record, proportional depth
+
+Use the architect's [design record](../architect/references/design-decisions.md) when a
+substantive design needs durable handoff. Keep scope, alternatives, diagrams and acceptance
+in the same owning plan/document. For spikes, name the question and stopping limit; a no-build
+or inconclusive recommendation is a valid outcome. Use [visuals](../visuals/SKILL.md) only when
+it helps the decision.

@@ -24,7 +24,7 @@ clear writing.
 
 Use [social-content](../social-content/SKILL.md) for social post strategy, author
 voice, platform adaptation and carousel copy; this skill supplies the prose pass.
-Use social-preview for rendered feed mockups and
+Use the available visual tools for rendered feed mockups and
 attached visuals. Editing a caption does not require generating visual assets.
 
 ## Comments inside source

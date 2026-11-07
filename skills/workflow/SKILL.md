@@ -19,8 +19,8 @@ refresh affected guidance on checkout, path, rule or context changes. State only
 observed file/read, request-inclusion and execution evidence; no runtime gate or
 research harness is implied.
 For a durable handoff, use the optional [task record](references/task-record.md)
-without duplicating an existing tracker. Setup selects orbyn-setup
-automatically and preserves active external paths until migration is authorized.
+without duplicating an existing tracker. Read the target project’s existing setup
+instructions and preserve active external paths until migration is authorized.
 
 Use local resources first. External citations
 identify origins; fetch only when current information is required and network
@@ -32,8 +32,8 @@ a host lacks a Skill tool. Carry authorized work through its handoffs and checks
 do not hand executable setup commands back merely because another skill owns
 them. Keep consequential authority and missing human-only decisions explicit.
 
-When checkout isolation is needed or a worktree is requested, select
-orbyn-worktree. Resolve the primary clone and prefer
+When checkout isolation is needed or a worktree is requested, follow the consuming
+project’s Git conventions. Resolve the primary clone and prefer
 its sibling `<repo>-wt/<purpose>/` root, reusing a suitable owned checkout first.
 Preserve active legacy layouts and local output; isolation does not require a new
 chat or imply separate databases/services.
@@ -79,7 +79,7 @@ permits. Do not load the whole library or repeat a checklist in every reply.
 
 Use [plan](../plan/SKILL.md) for explicit plans or a complex change;
 use [research](../research/SKILL.md) for unresolved external facts and
-orbyn-skill-creator for skill-system changes.
+the [skill-authoring playbook](playbooks/authoring-a-skill.md) for skill-system changes.
 
 For work crossing domain, transport, persistence and clients, use the
 [this library contract](references/fullstack-contract.md). Resolve the
@@ -89,19 +89,19 @@ stored-format transitions to [data-migration](../data-migration/SKILL.md),
 and trusted automation to [ci-design](../ci-design/SKILL.md).
 
 For external code/skill freshness, downloaded research or selective upstream
-updates, use orbyn-upstream-review. Keep raw
+updates, use research and source comparison. Keep raw
 references in ignored `upstream-references/`; adapt the existing owner and preserve
 source revisions and library releases separately. Available-source review does not require binary
 reverse engineering or automatic installation of new upstream workflows.
 
 For an explicitly requested portable/offline source audit, use
-orbyn-security-audit; existing findings remain
+a scoped source review with `how` and `interrogate`; existing findings remain
 with remediation and a hosted security scan retains its own workflow.
 
 Use [how](../how/SKILL.md) before changing unfamiliar behavior,
 [architect](../architect/SKILL.md) for consequential data/ownership decisions,
 [why](../why/SKILL.md) for historical constraints, and
-figure-it-out when a larger task needs its own plan.
+[plan](../plan/SKILL.md) when a larger task needs its own plan.
 Essential rules live with each engineering owner. Use the [method index](references/principles.md)
 only when a decision needs a concrete example or check.
 
@@ -235,3 +235,11 @@ to choose storage, retain the human handoff and clean only owned disposable reso
 ## Mobile engineering
 
 For demonstrated Expo/React Native work or EAS delivery, use the conditional [mobile routing index](references/mobile-engineering.md). Generic mobile stack choices keep stack-selection; bare native and mobile web retain their own owners.
+
+## Match the work and its evidence
+
+Use [task kinds](references/task-kinds.md) for spikes, plans, design, programming, writing
+and game development. Select the smallest useful method and stopping condition; do not impose
+a full lifecycle or visual on every task. The configured [worklog](../worklog/SKILL.md) owns
+private activity capture at turn end; project progress, detailed evidence and reusable lessons
+keep their existing owners.

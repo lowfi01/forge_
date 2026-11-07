@@ -20,7 +20,7 @@ containment, routes, guards, labels, palette and optional safe drawing primitive
 The executable schema is documented in the helper's `--help`.
 
 The [art contract](../../references/illustrated-statecharts.md) applies beyond
-these examples. Use technical-illustration to author a different composition or
+these examples. Use ui-design to author a different composition or
 richer art when its geometry needs more than this lightweight helper. Preserve
 the actual behavior rather than fitting it into this sample. For a real checked
 counterexample, use the separate [leased-job demo](../leased-job/guide.md).

@@ -1,6 +1,6 @@
 # Code-driven motion support
 
-This is reusable source owned by technical-illustration and ui-design, not a
+This is reusable source owned by ui-design, not a
 new skill, provider or mandatory installation. Keep the consuming project's own
 brand, design owner, instructions, existing stack and review files. The outer
 library/nested-target layout is unchanged.

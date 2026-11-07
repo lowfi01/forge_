@@ -78,8 +78,8 @@ python3 skills/architect/scripts/illustrate-statechart.py \
 ```
 
 Author data and optional domain drawing from the consuming system's own model.
-Use the existing technical-illustration geometry method for a composition beyond
-the helper's declarative primitives; the method has no fixed theme menu. Rendering
+For a composition beyond the helper’s declarative primitives, use the project’s
+available drawing tools and the UI design guidance. Rendering
 budgets and schema validation are execution boundaries, not a ban on new art.
 
 ## Reproduce and review

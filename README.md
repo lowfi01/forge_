@@ -1,10 +1,10 @@
 # Forge
 
-James's personal skill library for Claude Code (and Codex): one engineering method shared
+James's personal skill library for Claude Code by default, with Codex available when needed: one engineering method shared
 across work, mobile apps, the trading bot, game dev and writing.
 
 Forked from [Orbyn Fullstack Engineering Skills](https://github.com/kinqsradio/orbyn-fullstack-skills)
-by Anh Dang (MIT), then pruned from 36 to 19 skills, renamed, and set up for
+by Anh Dang (MIT), then initially pruned from 36 to 19 skills; now extended to 21, renamed, and set up for
 cheap-by-default models. See [LICENSE](LICENSE) and [AUTHORS.md](AUTHORS.md).
 
 *Herrero* is Spanish for blacksmith; this is where the tools get made.
@@ -42,8 +42,8 @@ Full list with descriptions: [skills/README.md](skills/README.md).
 | Delivery | `ci-design` |
 | Mobile and UI | `ui-design` |
 | Languages | `language-best-practices` |
-| Writing | `unslop`, `social-content` |
-| Memory and logs | `reflect`, `show-me-your-work` |
+| Writing and visuals | `unslop`, `social-content`, `visuals` |
+| Memory and logs | `reflect`, `show-me-your-work`, `worklog` |
 
 ## Using it in a project
 
@@ -55,9 +55,9 @@ logs and dashboards, and conventions. Project-only skills go in the project's ow
 ## Roadmap
 
 1. Rewrite the core around James's work: `dev-investigate`, `adversarial`, `pr-flow`, `oncall`.
-2. Add `work-log` (daily Notion summary + handoff), `visuals` and `learn`.
+2. Validate private `worklog` and `visuals` on real tasks; improve learning through `reflect`.
 3. Domain packs: work (.NET, payroll), mobile, trading bot, Godot.
-4. Clear the remaining mentions of removed skills (`python3 scripts/check.py` lists them).
+4. Keep routing limited to the maintained skills (`python3 scripts/check.py` checks the library).
 
 ## Pull upstream improvements
 
@@ -67,3 +67,10 @@ logs and dashboards, and conventions. Project-only skills go in the project's ow
 git fetch upstream
 git diff upstream/main -- skills/interrogate   # paths differ for renamed skills
 ```
+
+## How much process?
+
+Use the smallest method that answers the request: a spike ends with evidence and a recommendation;
+a design explains the contract and meaningful alternatives; code needs relevant checks; a game
+needs separate correctness, experience and performance evidence. Visuals are conditional.
+See [selected adaptations](docs/forge-adaptations.md) for the upstream source and what was omitted.

@@ -22,7 +22,7 @@ owners, interfaces, lifecycle/failure rules and regression checks. A similar
 upstream diagram or implementation does not establish this project's contract.
 
 Compare plausible alternatives where the choice is consequential. A small sketch
-is sufficient when an established pattern fits. Use arena
+is sufficient when an established pattern fits. Compare additional sketches
 only when competing candidates would settle a real uncertainty; do not launch a
 model panel for every function boundary.
 
@@ -43,7 +43,7 @@ design from current-code behavior, expose forbidden states and connect important
 rules to source and preview scenarios. A chart alone does not verify a property.
 Use `tdd` for model checking and drift, and `ui-design` for the human preview.
 For domain artwork over a statechart, use [illustrated statecharts](references/illustrated-statecharts.md)
-and technical-illustration while keeping plain semantics and evidence accessible.
+and ui-design while keeping plain semantics and evidence accessible.
 
 ## Code organization and module boundaries
 
@@ -160,3 +160,11 @@ procedure or requirement for a new registry.
 ## Native boundaries
 
 For Expo modules/views/config plugins, DOM/native bridges, brownfield and incremental web migration, use [mobile boundaries](references/mobile-boundaries.md). Preserve target-native ownership; no automatic scaffolding or macro migration.
+
+## Bounded comparison and visual explanation
+
+Use [design decisions](references/design-decisions.md) for one durable record and an initial
+comparison of at most two options when evidence has not settled a consequential choice.
+Use [visuals](../visuals/SKILL.md) for the appropriate diagram or illustration; architecture
+retains ownership of meaning. Routine settled changes need neither an alternatives panel nor
+a new document.

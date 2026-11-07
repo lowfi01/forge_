@@ -1,6 +1,6 @@
 ---
 name: social-content
-description: "Draft and revise LinkedIn and other social posts, product announcements, threads and carousel copy from supplied evidence in the author's voice. Use social-preview for visual assets and feed mockups."
+description: "Draft and revise LinkedIn and other social posts, product announcements, threads and carousel copy from supplied evidence in the author's voice. Use available visual tools for visual assets and feed mockups."
 ---
 
 # Social writing
@@ -54,12 +54,11 @@ Do not stretch a small point into an arbitrary slide count.
 Deliver copyable post text plus only the alternatives, claim notes or visual brief
 needed for the request. Keep editorial notes out of the copyable post. For images,
 carousels or a feed preview, pass the chosen copy, audience, brand assets, slide
-order and evidence limits to social-preview.
-Use its brief format when running
-the bundled renderer; do not require that format for ordinary writing.
+order and evidence limits to the available visual tools.
+Choose a supported output format after checking the available tools; this library
+does not bundle a dedicated social graphics renderer.
 
-Use product content design for in-app labels
-and help. Use [UI design](../ui-design/SKILL.md) for changes to the product
+Use [UI design](../ui-design/SKILL.md) for in-app labels, help and changes to the product
 itself. A slide outline is not a rendered carousel. A content calendar is a draft
 plan, not a scheduled automation. Publishing, scheduling, comments and messages
 require the user's applicable instruction; preparing content does not perform them.

@@ -11,7 +11,7 @@ workload shape, peak versus typical demand, latency target, availability, consis
 capacity/cost limit, recovery objective and data retention. Label each value as
 measured, required or assumed; do not invent numbers to fill a template. Compare
 the current design/no-change option with the smallest plausible alternatives.
-State the evidence that would reverse the choice. Use `arena` for a consequential
+State the evidence that would reverse the choice. Use `architect` for a consequential
 unresolved comparison, not every interface.
 
 Use the [impact map](../../how/references/impact-map.md) to separate implementation

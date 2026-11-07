@@ -211,6 +211,24 @@
         "how",
         "architect"
       ]
+    },
+    {
+      "name": "visuals",
+      "category": "Social content and visuals",
+      "related": [
+        "architect",
+        "ui-design",
+        "plan"
+      ]
+    },
+    {
+      "name": "worklog",
+      "category": "Workflow and planning",
+      "related": [
+        "workflow",
+        "reflect",
+        "show-me-your-work"
+      ]
     }
   ],
   "retired_skills": {

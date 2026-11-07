@@ -11,7 +11,7 @@ shared components. Compact default text must remain readable and grow with user
 accessibility settings.
 
 For social announcement graphics, product screenshot compositions and feed
-mockups, use social-preview, with
+mockups, use available visual tools and the supplied brand assets, with
 [social-content](../social-content/SKILL.md) for the post. This skill owns changes
 to the product UI itself; a promotional mockup is not an implemented screen.
 
@@ -29,8 +29,7 @@ never become prerequisites for ordinary product UI.
 ## Read before designing
 
 - Read `AGENTS.md` and the agreed task scope; preserve scope and stage order.
-- For product copy and information hierarchy, read
-  `skills/orbyn-content-design/SKILL.md`; keep detailed content rules there.
+- Keep product copy and information hierarchy with this skill’s design and UX rules.
 - Read [design rules](references/design-rules.md) for typography, layout, copy,
   AI behavior, and the visual acceptance matrix.
 - Read [UX rules](references/ux-rules.md) when changing navigation, task steps,

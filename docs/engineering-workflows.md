@@ -8,27 +8,22 @@ or making the user invoke a sequence of helper skills.
 | ----------------------------------------------------------------------------------------------- | ---------------------------------- |
 | Caller burden, useful hidden complexity, actual variation and public/private module boundaries  | `architect`                        |
 | Complete narrow delivery outcomes, prerequisites, blocking edges and acceptance                 | `plan`                       |
-| Investigation, scoped implementation, verification and delivery handoffs                        | `workflow` / `figure-it-out` |
+| Investigation, scoped implementation, verification and delivery handoffs                        | `workflow` |
 | Repeatable symptom, source tracing, one material hypothesis change and missing runtime evidence | `how` and the defect playbook      |
 | Observable behavior, effect seams and one verified failing contract at a time                   | `tdd`                              |
 | Concrete caller/contract risks, counterexamples and proportionate evidence                      | `interrogate`                      |
-| Existing project discovery, local company namespaces and backed-up setup                        | `orbyn-setup`                      |
-| Explicit portable source audit, coverage, independent verification and structured records       | `orbyn-security-audit`             |
+| Existing project discovery, local company namespaces and backed-up setup                        | project setup instructions                      |
+| Explicit portable source audit, coverage, independent verification and structured records       | `how` + `interrogate`             |
 
 The user describes the outcome. The agent chooses relevant owners, uses the
 consumer’s terminology, completes authorized helper steps and reports actual
 evidence. Setup/spec/ticket commands are implementation tools, not extra manual
 invocations for the human. Company-only procedures remain consumer-owned.
 
-`openSrc/` is an ignored local research scratch area. It is never tracked,
-published, installed, exported or required by CI or active skills. The library
-checker rejects tracked files there. Active instructions are self-contained local
-guides; only necessary licensed support files are deliberately distributed, with
-copyright, license, revision and hashes in their legal/provenance records.
-
-CI validates metadata, links, managed hashes and helper behavior using synthetic
-fixtures. These checks do not establish live model quality, application runtime
-behavior or a completed independently verified target audit.
+`python3 scripts/check.py` validates names, descriptions, links, the catalog and
+host mirrors, and reports retired skill references. It does not establish live
+model quality, runtime behavior or security qualification. Preserve licensed
+support files and their legal/provenance records.
 
 ## Languages and stack decisions
 

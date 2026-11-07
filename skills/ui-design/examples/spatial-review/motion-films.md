@@ -1,9 +1,8 @@
 # Author and export motion films
 
-This capability lives in the canonical **technical-illustration** skill, under its
-motion method.
-It is original maintained source, not an installed Scenario skill. The entrypoint
-routes code-driven motion films here; UI layout, social posters and ordinary
+This capability lives with the **ui-design** skill’s bundled motion examples.
+It is maintained example source, not an installed Scenario skill.
+UI layout, social posters and ordinary
 editing of existing footage retain their existing owners.
 
 Prepare a **new** package under the consuming repo's design owner using `prepare.py`

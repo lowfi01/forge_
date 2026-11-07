@@ -15,7 +15,7 @@ Translate the requested end state into an inventory of artifacts, caller changes
 Concrete check: An extracted service is incomplete if routing or the old writer remains active. Name that remaining unit even when the new service’s local checks pass.
 
 Return the changed invariant, its owning location and the observation or evidence
-gap. Carry execution through figure-it-out when relevant. This
+gap. Carry execution through workflow when relevant. This
 principle refines that task; it does not create another mandatory phase.
 
 ## Source and license

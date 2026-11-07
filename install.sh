@@ -30,6 +30,24 @@ install_skills() {  # install_skills <dir>
   echo "skills -> $1 ($MODE)"
 }
 
+# Rebuild the repo's own mirrors (symlinks to skills/) so Claude/Codex see them inside this repo too.
+for mirror in "$REPO/.claude/skills" "$REPO/.agents/skills"; do
+  mkdir -p "$mirror"
+  for s in "$REPO"/skills/*/; do
+    s="${s%/}"; name="$(basename "$s")"; dest="$mirror/$name"
+    if [ -L "$dest" ]; then
+      rm "$dest"
+    elif [ -e "$dest" ]; then
+      mkdir -p "$REPO/output/install-backups"
+      backup="$(mktemp -d "$REPO/output/install-backups/mirror.XXXXXX")"
+      mv "$dest" "$backup/$name"
+      echo "  backed up existing mirror $name -> $backup"
+    fi
+    ln -s "../../skills/$name" "$dest"
+  done
+done
+echo "repo mirrors rebuilt"
+
 install_skills "$HOME/.claude/skills"
 
 mkdir -p "$HOME/.claude/agents"
